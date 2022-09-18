@@ -15,7 +15,7 @@ export default function ExperienceCard({}: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        src="https://cdn.mos.cms.futurecdn.net/CAZ6JXi6huSuN4QGE627NR-970-80.jpg.webp"
+        src="https://cdn2.downdetector.com/static/uploads/c/300/4a527/JP_Morgan_logo.png"
         alt=""
       />
       <div className="px-0 md:px-10">
@@ -37,16 +37,13 @@ export default function ExperienceCard({}: Props) {
             src="https://cdn.mos.cms.futurecdn.net/CAZ6JXi6huSuN4QGE627NR-970-80.jpg.webp"
             alt=""
           />
-          {/* stuff */}
-          {/* stuff */}
-          {/* stuff */}
         </div>
         <p className="uppercase py-5 text-gray-500">Started works.....</p>
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Summary Summary Summary Summary Summary Summary Summary Summary Summary </li>
-          <li>Summary Summary Summary Summary Summary Summary Summary Summary Summary </li>
-          <li>Summary Sum mary Summary Summary Summary Summary Summary Summary Summary </li>
-          <li>Summary Summary Summary Summary Summary Summary Summary Summary Summary </li>
+          <li>Summary Summary Summary Summary Summary</li>
+          <li>Summary Summary Summary Summary Summary</li>
+          <li>Summary Summary Summary Summary Summary</li>
+          <li>Summary Summary Summary Summary Summary</li>
         </ul>
       </div>
     </article>
