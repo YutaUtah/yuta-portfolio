@@ -34,7 +34,7 @@ export default function Projects({}: Props) {
                 <span className="underline decoration-[blue]/50">
                   Case Study {i + 1} of {projects.length}:{" "}
                 </span>
-                UPS Clone
+                Project
               </h4>
               <p className="text-lg text-center md:text-left">
                 Summary Summary Summary Summary Summary Summary Summary Summary
