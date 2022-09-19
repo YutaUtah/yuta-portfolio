@@ -1,9 +1,23 @@
 import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
+
+type Inputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 type Props = {};
 
 export default function ContactMe({}: Props) {
+  const { register, handleSubmit } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:yuta.hayashi96@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
+  };
+
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
       <h3 className="absolute top-24 uppercase tracking-[15px] text-gray-500 text-2xl">
@@ -15,28 +29,50 @@ export default function ContactMe({}: Props) {
         </h4>
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <PhoneIcon className="text-[#408ad0] h-7 w-7 animate-pulse" />
             <p className="text-2xl">+81-80-6619-4899</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <EnvelopeIcon className="text-[#408ad0] h-7 w-7 animate-pulse" />
             <p className="text-2xl">yuta.hayashi96@gmail.com</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+            <MapPinIcon className="text-[#408ad0] h-7 w-7 animate-pulse" />
             <p className="text-2xl">Tokyo, Japan</p>
           </div>
         </div>
-        <form className="flex flex-col space-y-2 w-fit mx-auto">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col space-y-2 w-fit mx-auto"
+        >
           <div className="flex space-x-2">
-            <input placeholder="Name" className="contactInput" type="text" />
-            <input placeholder="Email" className="contactInput" type="email" />
+            <input
+              {...register("name")}
+              placeholder="Name"
+              className="contactInput"
+              type="text"
+            />
+            <input
+              {...register("email")}
+              placeholder="Email"
+              className="contactInput"
+              type="email"
+            />
           </div>
-          <input placeholder="Subject" className="contactInput" type="text" />
-          <textarea placeholder="Message" className="contactInput" />
+          <input
+            {...register("subject")}
+            placeholder="Subject"
+            className="contactInput"
+            type="text"
+          />
+          <textarea
+            {...register("message")}
+            placeholder="Message"
+            className="contactInput"
+          />
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-[#408ad0] py-5 px-10 rounded-md text-black font-bold text-lg"
           >
             Submit
           </button>
