@@ -9,7 +9,7 @@ type Props = {
 
 export default function ExperienceCard({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="flex flex-col rounded-lg items-center space-y-5 flex-shrink-0 h-[620px] w-[400px] md:w-[600px] xl:w-[700px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden">
       <motion.img
         initial={{
           y: -100,
@@ -18,11 +18,11 @@ export default function ExperienceCard({ experience }: Props) {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+        className="w-28 h-28 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
         src={urlFor(experience?.companyImage).url()}
         alt=""
       />
-      <div className="px-0 md:px-10">
+      <div className="md:px-8">
         <h4 className="text-4xl font-light">{experience.company}</h4>
         <p className="font-bold text-2xl mt-1">{experience.jobTitle}</p>
         <div className="flex space-x-2 my-2">
@@ -35,12 +35,10 @@ export default function ExperienceCard({ experience }: Props) {
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-500">Started works.....</p>
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Summary Summary Summary Summary Summary</li>
-          <li>Summary Summary Summary Summary Summary</li>
-          <li>Summary Summary Summary Summary Summary</li>
-          <li>Summary Summary Summary Summary Summary</li>
+        <ul className="list-disc space-y-4 ml-5 text-lg mt-6">
+          {experience.descriptions.map((description) => (
+            <li key={description.length}>{description}</li>
+          ))}
         </ul>
       </div>
     </article>
