@@ -23,11 +23,6 @@ export default {
       type: "text",
     },
     {
-      name: "company",
-      title: "Company",
-      type: "text",
-    },
-    {
       name: "technologies",
       title: "Technologies",
       type: "array",
