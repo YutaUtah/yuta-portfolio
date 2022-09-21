@@ -55,5 +55,13 @@ export default {
       type: "array",
       of: [{ type: "reference", to: { type: "social" } }],
     },
+    {
+      name: "footerImage",
+      title: "FooterImage",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 };

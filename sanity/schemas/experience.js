@@ -48,6 +48,12 @@ export default {
         of: [{ type: "reference", to: { type: "skill" } }],
       },
       {
+        name: "descriptions",
+        title: "Description",
+        type: "array",
+        of: [{ type: "string"}],
+      },
+      {
         name: "points",
         title: "Points",
         type: "array",
