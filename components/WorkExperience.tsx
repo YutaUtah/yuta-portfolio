@@ -11,7 +11,6 @@ export default function WorkExperience({ experiences }: Props) {
 
   const sortedExperiences = experiences.sort((x, y) => +new Date(y.dateStarted) - +new Date(x.dateStarted));
 
-  console.log(sortedExperiences)
   return (
     <motion.div
       initial={{ opacity: 0 }}
